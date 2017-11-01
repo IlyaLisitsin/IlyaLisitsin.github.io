@@ -123,15 +123,23 @@ input:focus {
 video {
     position: absolute;
     filter: grayscale(100%);
-    height: 100%;
-    width: auto;
+    height: auto;
+    width: 100%;
 }
 
-@media screen
-and (min-width: 1800px){
+/*@media screen*/
+/*and (max-width: 1089px){*/
 
-    video {
-        width: 100%;
-        height: auto;
-    }
-}
+    /*video {*/
+        /*width: auto;*/
+        /*height: 100%;*/
+    /*}*/
+/*}*/
+
+/*@media screen*/
+/*and (max-heigt: 500px) {*/
+    /*.video {*/
+        /*height: auto;*/
+        /*width: 100%;*/
+    /*}*/
+/*}*/

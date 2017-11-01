@@ -23,13 +23,10 @@
     var input = document.querySelector('input');
     var initial = document.querySelector('#initial');
     var checker = document.querySelector('#checker');
-    var copyBtn = document.querySelector('.copy-btn');
 
     input.addEventListener('keyup', inputHandler);
     input.onfocus = inputActivate;
     input.onblur = inputDeactivate;
-
-    copyBtn.addEventListener('click', copyBtnHandler);
 
     function inputActivate(e) {
         initial.classList.add('active')
@@ -48,10 +45,5 @@
         if (this.value.length) initial.classList.add('hide');
         else initial.classList.remove('hide');
         canvasDraw(this.value, checkerFill(this.value));
-    }
-
-    function copyBtnHandler() {
-        var img = canvas.toDataURL("image/png");
-
     }
 })();
