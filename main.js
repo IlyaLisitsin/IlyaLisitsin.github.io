@@ -64,7 +64,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "997ecf3987cb557e6365";
+/******/ 	var hotCurrentHash = "9463d3d4be2940156a9b";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -933,7 +933,7 @@ class header_component_Header {
             return;
         }
 
-        document.querySelector('.no-results-caption').classList.add('hide');
+        if (document.querySelector('.no-results-caption')) document.querySelector('.no-results-caption').classList.add('hide');
         newsListSection.innerHTML = '';
         articlesCollection.map(({ author, title, publishedAt, source: { name }, description, url, urlToImage }) => newsListSection.innerHTML += news_card({
             author: author || '',
