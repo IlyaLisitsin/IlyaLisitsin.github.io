@@ -64,7 +64,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "8b4f6a11fcfe99751091";
+/******/ 	var hotCurrentHash = "63437511bedf8c452f22";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -918,7 +918,7 @@ class header_component_Header {
         const req = new Request(url);
 
         if (document.querySelector('.spinner')) document.querySelector('.spinner').classList.remove('hide');
-        document.querySelector('.no-results-caption').classList.add('hide');
+        if (document.querySelector('.no-results-caption')) document.querySelector('.no-results-caption').classList.add('hide');
         fetch(req).then(res => res.json()).then(({ articles }) => {
             document.querySelector('.spinner').classList.toggle('hide');
             this.renderCardList(articles);
