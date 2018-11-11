@@ -64,7 +64,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "c7f5525da0c9dbd2ba3f";
+/******/ 	var hotCurrentHash = "6427e5456fe1d2127f79";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -879,6 +879,7 @@ const headerTpl = () => `
 
 
 
+
 class header_component_Header {
     constructor() {
         this.headerDomModel = null;
@@ -917,25 +918,25 @@ class header_component_Header {
 
         const req = new Request(url);
 
-        if (document.querySelector('.spinner')) document.querySelector('.spinner').classList.remove('hide');
-        if (document.querySelector('.no-results-caption')) document.querySelector('.no-results-caption').classList.add('hide');
+        document.querySelector('.spinner').classList.remove('hide');
+        document.querySelector('.no-results-caption').classList.add('hide');
         fetch(req).then(res => res.json()).then(({ articles }) => {
-            if (document.querySelector('.spinner')) document.querySelector('.spinner').classList.toggle('hide');
+            document.querySelector('.spinner').classList.toggle('hide');
             this.renderCardList(articles);
         });
     }
 
     renderCardList(articlesCollection) {
         const newsListSection = document.querySelector('.news-list');
+        newsListSection.innerHTML = '';
 
         if (!articlesCollection.length) {
-            if (document.querySelector('.no-results-caption')) document.querySelector('.no-results-caption').classList.remove('hide');
+            document.querySelector('.no-results-caption').classList.remove('hide');
             return;
         }
 
-        if (document.querySelector('.no-results-caption')) document.querySelector('.no-results-caption').classList.add('hide');
-        newsListSection.innerHTML = '';
-        articlesCollection.map(({ author, title, publishedAt, source: { name }, description, url, urlToImage }) => newsListSection.innerHTML += news_card({
+        document.querySelector('.no-results-caption').classList.add('hide');
+        articlesCollection.map(({ author, title, publishedAt, source: { name }, description, url, urlToImage }) => newsListSection.innerHTML += news_card_tpl({
             author: author || '',
             title: title || '',
             publishedAt: this.extractDate(publishedAt) || '',

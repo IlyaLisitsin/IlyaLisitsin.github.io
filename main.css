@@ -142,7 +142,11 @@ label span {
   transform: scale(1); }
 
 .hide {
-  display: none !important; }
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+  position: absolute !important; }
 
 h1 {
   font-size: 24px;
@@ -302,6 +306,12 @@ header {
   .news-card .description {
     font-size: 13px;
     margin-top: 10px; }
+  .news-card .slider {
+    width: auto;
+    height: auto;
+    overflow: visible;
+    opacity: 1;
+    position: static; }
 
 @media (max-width: 430px) {
   .news-card {
