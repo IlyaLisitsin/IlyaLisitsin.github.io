@@ -322,6 +322,17 @@ header {
     .news-card .title {
       margin-bottom: 10px; } }
 
+.powered-by {
+  position: absolute;
+  top: 30px;
+  right: 20px;
+  color: #37a000;
+}
+
+.powered-by a:hover {
+  color: #008329;
+}
+
 .spinner {
   display: inline-block;
   vertical-align: top;
